@@ -1,0 +1,13 @@
+.video-section{
+    height: 80vh;
+    overflow:auto;
+}
+
+.video{
+    width: 100%;
+    height: 70%;
+}
+
+iframe{
+    border: 0px;
+}

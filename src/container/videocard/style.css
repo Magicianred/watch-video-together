@@ -1,0 +1,33 @@
+.container-photo{
+    width: 80px;
+    background: gray !important;
+    height: 80px;
+}
+
+.container-text{
+    text-overflow: ellipsis;
+    color: black !important;
+}
+
+.limit-text{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.container-text .h5{
+    margin-top: -85px;
+}
+
+.container-text p{
+    height: 20px;
+    margin-left: 100px;
+}
+
+#videocard{
+    transition: 200ms;
+}
+
+#videocard:hover{
+    background: whitesmoke !important;
+}

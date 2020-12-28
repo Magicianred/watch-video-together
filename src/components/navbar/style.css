@@ -1,0 +1,21 @@
+.navbar{
+    background: white;
+}
+
+.navbar input{
+    border: 0px;
+    border-radius: 0px !important;
+    border-bottom: 1px solid gray;
+}
+
+.navbar-brand{
+    transition: 200ms;
+}
+
+.navbar-brand:hover{
+    transform: scale(0.9,0.9);
+}
+
+.form-control{
+    width: 400px !important;
+}
