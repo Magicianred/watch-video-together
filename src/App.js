@@ -6,12 +6,14 @@ import {
 
 // Pages 
 import Home from './pages/home'
+import WaitRoom from './pages/waitroom'
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact component={Home} path="/"/>
+        <Route component={Home} path="/room"/>
+        <Route exact component={WaitRoom} path="/"/>
       </Switch>
     </Router>
   )

@@ -1,5 +1,8 @@
 import {Col} from 'react-bootstrap'
 
+// Containers
+import BuyMeCoffe from '../../container/buymecoffe/buymecoffe'
+
 // Styles
 import './style.css'
 
@@ -16,12 +19,7 @@ export default function VideoSection(){
                         Videolardan memnun kaldıysanız kanala abone olabilir, paylaşımlardan haberdar olmak için ise çanı tıklayarak bildirimleri açabilirsiniz
                     </p>
                 </div>
-                <div className="mt-4">
-                    <p className="h3">
-                        Share your link:
-                    </p>
-                    <input value="http://localhost:3000" className="form-control"/>
-                </div>
+                <BuyMeCoffe/>
             </div>
         </Col>
     )
