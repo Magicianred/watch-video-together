@@ -11,16 +11,6 @@ export default function Aside(){
         <Col md={3} lg={4}>
             <div className="aside p-3 shadow-sm mt-5">
                 <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
-                <VideoCard/>
             </div>
         </Col>
     )

@@ -5,7 +5,7 @@ import {Navbar,Nav,Form,FormControl,Button} from 'react-bootstrap'
 // Styles
 import './style.css'
 
-export default function NavbarLayout(){
+export default function NavbarLayout(props){
 
     const [search,setSearch] = useState(null)
 
