@@ -23,7 +23,7 @@ export default function RoomKey(props){
                     variant="light"
                     {...triggerHandler}
                     ref={ref}
-                    className="d-inline-flex align-items-center"
+                    className="d-inline-flex align-items-center room-key"
                 >
                     <span className="ml-1">Room key:  <a id="key">{props.ticket}</a></span>
                 </Nav.Link>

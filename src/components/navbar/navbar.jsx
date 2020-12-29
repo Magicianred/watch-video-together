@@ -13,9 +13,10 @@ import './style.css'
 
 export default function NavbarLayout(props){
 
-    const [search,setSearch] = useState(null)
+    const [search,setSearch] = useState("https://www.youtube.com/watch?v=AxesgN2ruHQ")
 
-    function onSubmit(e){
+    async function onSubmit(e){
+        
         axios({
             method: "post",
             url: "http://localhost:8080/search-video",
@@ -27,14 +28,19 @@ export default function NavbarLayout(props){
 
     return (
         <Navbar className="shadow-lg m-4 rounded">
-            <Navbar.Brand >Watch Video Togather 📽</Navbar.Brand>
+            <Navbar.Brand >Watch Video Together 📽</Navbar.Brand>
+            {/* <Form.Check 
+                type="switch"
+                id="custom-switch"
+                label="Dark mode"
+            /> */}
+            {/* AIzaSyDRZuk9icZ6a5cali9IuvTkr4R7sWy1pfE */}
             <Nav className="mr-auto">
-            <Nav.Link>Home</Nav.Link>
+            <Nav.Link active>Home</Nav.Link>
             <Nav.Link href="/">Exit</Nav.Link>
             </Nav>
-            <TicketShow ticket={window.location.pathname.substring(6)} />
             <Form inline>
-            <FormControl type="text" onChange={(e) => setSearch(e.target.value) } className="shadow-sm" placeholder="Search something 📼📼📼" className="mr-sm-2" />
+            <FormControl type="text" onChange={(e) => setSearch(e.target.value) } className="shadow-sm" placeholder="Past your link to here 📼📼📼" className="mr-sm-2" />
             <Button onClick={onSubmit} className="shadow-sm" variant="light">Search</Button>
             </Form>
         </Navbar>
