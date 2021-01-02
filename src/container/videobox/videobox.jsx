@@ -1,15 +1,20 @@
 import YouTube from 'react-youtube';
 
-export default function VideoBox(){
+// Styles
+import './style.css'
 
-    const opts = {
-        width: '100%',
-        playerVars: {
-          autoplay: 1,
-        },
-      };
+export default function VideoBox(props){
   
     return (
-        <YouTube videoId="_nBlN9yp9R8" opts={opts}/>
+      <iframe
+       allowfullscreen="allowfullscreen"
+       mozallowfullscreen="mozallowfullscreen" 
+       msallowfullscreen="msallowfullscreen" 
+       oallowfullscreen="oallowfullscreen" 
+       webkitallowfullscreen="webkitallowfullscreen"
+       src={"https://www.youtube.com/embed/" + props.videoid +  "?fs=1&color=white&autohide=0&controls=0&disablekb=1"}>
+          
+      </iframe>
+        // <YouTube videoId="_nBlN9yp9R8" opts={opts}/>
     )
 }

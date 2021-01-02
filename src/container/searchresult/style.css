@@ -1,0 +1,11 @@
+.search-result{
+    background-color: white;
+    margin-right: 40px;
+    float: right;
+    right: 0px;
+    margin-top: 15px;
+    width: 350px;
+    height: 100px;
+    z-index: 99;
+    float: right;
+}

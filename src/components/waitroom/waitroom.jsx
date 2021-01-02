@@ -1,5 +1,4 @@
 import {useEffect,useState} from 'react'
-import crypto from 'crypto'
 import {Form,Button} from 'react-bootstrap'
 import axios from 'axios'
 
@@ -24,7 +23,7 @@ export default function WaitRoom(){
         <div id="waitroom">
             <BuyMeCoffe/>
             <p className="display-4">
-                Watch Video Togather
+                Watch Video Together 👁
             </p>
             <hr className="bg-dark" />
             <Form.Group className="text-left">

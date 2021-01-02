@@ -3,9 +3,12 @@
 }
 
 .navbar input{
-    border: 0px;
-    border-radius: 0px !important;
-    border-bottom: 1px solid gray;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+}
+
+.navbar button{
+    border: 1px solid gray;
 }
 
 .navbar-brand{
@@ -22,4 +25,10 @@
 
 .room-key:active{
     transform: scale(0.9,0.9);
+}
+
+.results{
+    position: absolute;
+    right: 0px;
+    z-index: 99;
 }

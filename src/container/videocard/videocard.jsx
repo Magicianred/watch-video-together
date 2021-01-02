@@ -1,38 +1,34 @@
+import { useEffect,useState,useContext } from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 
 // Styles
 import './style.css'
 
-export default function VideoCard(){
+// Context api's
+import {linkStore} from '../../contexts/linkStore'
+
+export default function VideoCard(props){
+
+    const value = useContext(linkStore)
+
     return (
         <a href="javascript:void(0)">
             <div className="m-2 shadow-sm p-3" id="videocard">
                 <Container>
+                    <a href="javascript:void(0)">
                     <Row>
-                        <Col md="3" lg="3">
-                            <div className="container-photo">
-                                
-                            </div>            
-                        </Col>
-                        <Col md="9" lg="9">
-                            <p className="limit-text text-dark">
-                                Başarı, Errrrkek, Tinder, Otobüs
+                        <Col md="12" lg="12">
+                            <p className="limit-text text-dark mb-0">
+                                    {props.title}
                                 <br/>
-                                <small className="position-absolute">
-                                    dlöwkqölwdqk
+                                <small className="limit-text">
+                                    {props.description}
                                 </small>
                             </p>
                         </Col>
                     </Row>
+                    </a>
                 </Container>
-                <div className="container-text text-left">
-                    {/* <p className="h5 limit-text">
-                        Başarı, Errrrkek, Tinder, Otobüs
-                    </p>
-                    <p className="limit-text">
-                        Videolardan memnun kaldıysanız kanala abone olabilir, paylaşımlardan haberdar olmak için ise çanı tıklayarak bildirimleri açabilirsiniz.
-                    </p> */}
-                </div>
             </div>
         </a>
     )

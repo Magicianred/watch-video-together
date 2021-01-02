@@ -1,3 +1,4 @@
+import {useState,useEffect} from 'react'
 import {Container,Row} from 'react-bootstrap'
 
 // Components 
@@ -9,10 +10,22 @@ import Navbar from '../components/navbar/navbar'
 import {linkStore} from '../contexts/linkStore'
 
 export default function Home(){
+
+    const [link,setLink] = useState()
+
+    const [linkarr,setLinkArr] = useState([])
+
+    useEffect(() => {
+        setLinkArr([
+            ...linkarr,
+            link
+        ])
+    },[link]);
+
     return (
         <>
-        <linkStore.Provider>
-            <Navbar/>
+        <linkStore.Provider value={linkarr}>
+            <Navbar token={setLink} />
             <center>
             <Container className="m-4">
                 <Row>

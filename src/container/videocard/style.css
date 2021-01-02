@@ -1,6 +1,6 @@
 .container-photo{
     width: 50px;
-    background: gray !important;
+    background-image: url("https://i.ytimg.com/vi/HJtqJDxxH2Q/hqdefault.jpg") !important;
     height: 50px;
 }
 

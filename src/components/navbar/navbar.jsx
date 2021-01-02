@@ -1,47 +1,56 @@
-import {useState} from 'react'
 import axios from 'axios'
+import { useState } from 'react'
 import {Navbar,
     Nav,
     Form,
     FormControl,
     Button
 } from 'react-bootstrap'
-import TicketShow from '../../container/roomkey/roomkey' 
+import { parse } from "querystring"
+import jwt from 'jsonwebtoken'
+// import toast, { Toaster } from 'react-hot-toast';
 
 // Styles
 import './style.css'
 
 export default function NavbarLayout(props){
 
-    const [search,setSearch] = useState("https://www.youtube.com/watch?v=AxesgN2ruHQ")
+    const [link,setLink] = useState("https://www.youtube.com/watch?v=ytceCWsauSs")
 
-    async function onSubmit(e){
+    // Do if else for data
+    async function onSubmitSent(){
         
-        axios({
-            method: "post",
-            url: "http://localhost:8080/search-video",
-            data: {
-                video_link: search
+        document.querySelector("#search-bar").value = ""
+        var rawSnippts
+        
+        await axios({
+            method: "get",
+            url: `https://www.googleapis.com/youtube/v3/videos?id=${Object.values(parse(link))}`,
+            params: {
+                part: 'snippet',
+                maxResult: 1,
+                key: "AIzaSyDF4HlRKcTis3vd0DC-g-Absl8u4WmwHH8"
             }
+        }).then((res) => rawSnippts = res.data)
+                
+        props.token({
+            id: rawSnippts.items[0].id,
+            subject: rawSnippts.items[0].snippet.title,
+            description: rawSnippts.items[0].snippet.description,
         })
     }
 
+
     return (
         <Navbar className="shadow-lg m-4 rounded">
-            <Navbar.Brand >Watch Video Together 📽</Navbar.Brand>
-            {/* <Form.Check 
-                type="switch"
-                id="custom-switch"
-                label="Dark mode"
-            /> */}
-            {/* AIzaSyDRZuk9icZ6a5cali9IuvTkr4R7sWy1pfE */}
+            <Navbar.Brand >Watch Video Together 👁</Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link active>Home</Nav.Link>
             <Nav.Link href="/">Exit</Nav.Link>
             </Nav>
             <Form inline>
-            <FormControl type="text" onChange={(e) => setSearch(e.target.value) } className="shadow-sm" placeholder="Past your link to here 📼📼📼" className="mr-sm-2" />
-            <Button onClick={onSubmit} className="shadow-sm" variant="light">Search</Button>
+            <FormControl type="text" onChange={(e) => setLink(e.target.value)} className="shadow-sm" id="search-bar" placeholder="Past your link to here 📼📼📼" className="mr-sm-2" />
+            <Button onClick={onSubmitSent} className="shadow-sm" variant="light">Search</Button>
             </Form>
         </Navbar>
     )

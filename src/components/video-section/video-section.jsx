@@ -1,3 +1,4 @@
+import { useEffect,useState,useContext } from 'react'
 import {Col} from 'react-bootstrap'
 
 // Containers
@@ -8,10 +9,11 @@ import VideoBox from '../../container/videobox/videobox'
 import './style.css'
 
 export default function VideoSection(){
+
     return (
         <Col md={6} lg={7} >
             <div className="p-5 mt-3 video-section shadow-lg text-left">
-                <VideoBox className="video shadow-sm"/>
+                <VideoBox videoid={"ytceCWsauSs"} className="video shadow-sm"/>
                 <div className="mt-4">
                     <p className="h3">
                         Başarı, Errrrkek, Tinder, Otobüs
