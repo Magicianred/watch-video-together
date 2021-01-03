@@ -7,7 +7,6 @@ import {Navbar,
     Button
 } from 'react-bootstrap'
 import { parse } from "querystring"
-import jwt from 'jsonwebtoken'
 // import toast, { Toaster } from 'react-hot-toast';
 
 // Styles
@@ -35,14 +34,14 @@ export default function NavbarLayout(props){
                 
         props.token({
             id: rawSnippts.items[0].id,
-            subject: rawSnippts.items[0].snippet.title,
+            title: rawSnippts.items[0].snippet.title,
             description: rawSnippts.items[0].snippet.description,
         })
     }
 
 
     return (
-        <Navbar className="shadow-lg m-4 rounded">
+        <Navbar className="shadow-lg">
             <Navbar.Brand >Watch Video Together 👁</Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link active>Home</Nav.Link>

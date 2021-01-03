@@ -1,5 +1,6 @@
-import { useEffect,useState,useContext } from 'react'
+import { useState,useEffect } from 'react'
 import {Col} from 'react-bootstrap'
+import jwt from 'jsonwebtoken'
 
 // Containers
 import BuyMeCoffe from '../../container/buymecoffe/buymecoffe'
@@ -8,23 +9,26 @@ import VideoBox from '../../container/videobox/videobox'
 // Styles
 import './style.css'
 
-export default function VideoSection(){
+export default function VideoSection(props){
 
     return (
-        <Col md={6} lg={7} >
-            <div className="p-5 mt-3 video-section shadow-lg text-left">
-                <VideoBox videoid={"ytceCWsauSs"} className="video shadow-sm"/>
-                <div className="mt-4">
+        <Col md={6} lg={8} >
+            <div className="mt-3 video-section shadow-sm text-left bg-light">
+                <VideoBox videoid={props.videoprops.id} className="video shadow-sm"/>
+                <div className="p-4">
                     <p className="h3">
-                        Başarı, Errrrkek, Tinder, Otobüs
+                        {props.videoprops.title}
                     </p>
                     <p>
-                        Videolardan memnun kaldıysanız kanala abone olabilir, paylaşımlardan haberdar olmak için ise çanı tıklayarak bildirimleri açabilirsiniz
+                        {props.videoprops.description}
                     </p>
                 </div>
                 <hr/>
-                <BuyMeCoffe/>
+                <div className="ml-4 p-2">
+                    <BuyMeCoffe/>
+                </div>
             </div>
-        </Col>
+        </Col>    
     )
+    return null
 }

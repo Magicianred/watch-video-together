@@ -26,16 +26,9 @@ export default function WaitRoom(){
                 Watch Video Together 👁
             </p>
             <hr className="bg-dark" />
-            <Form.Group className="text-left">
-                <Form.Label>Your Privat Room: </Form.Label>
-                <Form.Control type="email" value={roomkey} />
-                <Form.Text className="text-muted ml-1">
-                You can invite your friend with this link !
-                </Form.Text><br/>
                 <Button variant="primary" size="lg" href={roomkey} className="shadow" block>
-                    Go In To Your Private Room
+                    GO CREATE YOUR PRIVATE ROOM
                 </Button>
-            </Form.Group>
         </div>
     )
 }
