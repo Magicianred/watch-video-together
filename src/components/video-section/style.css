@@ -11,3 +11,15 @@
 iframe{
     border: 0px;
 }
+
+
+
+@media(max-width: 480px){
+    #title{
+        font-size: 1.4rem;
+    }
+    
+    #description{
+        font-size: 0.8rem;
+    }
+}

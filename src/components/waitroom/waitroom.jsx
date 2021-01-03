@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import {Form,Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import axios from 'axios'
 
 // Components
@@ -10,7 +10,7 @@ import './style.css'
 
 export default function WaitRoom(){
 
-    const [roomkey,setRoomKey] = useState(window.location + "room/" + Math.random().toString(36).substring(2))
+    const [roomkey] = useState(window.location + "room/" + Math.random().toString(36).substring(2))
 
     useEffect(() => {
         axios({

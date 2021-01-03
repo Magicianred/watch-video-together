@@ -32,3 +32,33 @@
     right: 0px;
     z-index: 99;
 }
+
+.modal .form-control{
+    width: 100% !important;
+    border-radius: 0px !important;
+}
+
+.modal-content{
+    border-radius: 0px !important;
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+@media(max-width: 480px){
+    .form-control{
+        width: 100% !important;
+    }
+
+    #search-btn{
+        margin-top: 15px;
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+
+    #invite-btn{
+        margin-top: 15px;
+        width: 100% !important;
+    }
+}

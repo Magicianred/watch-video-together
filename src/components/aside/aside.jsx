@@ -1,4 +1,4 @@
-import { useEffect,useState,useContext } from 'react'
+import { useContext } from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 
 // Styles
@@ -18,7 +18,7 @@ export default function Aside(props){
                     value.map((element,index) => {
                         if(element){
                             return (
-                                <div className="p-3 border-bottom" id="videocard">
+                                <div key={index} className="p-3 border-bottom" id="videocard">
                                     <Container>
                                         <a onClick={() => props.videoprops({
                                             "id": element.id,
