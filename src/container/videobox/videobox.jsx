@@ -5,7 +5,7 @@ export default function VideoBox(props){
   
     return (
       <iframe
-       allowfullscreen="allowfullscreen"
+       allowFullScreen="allowfullscreen"
        mozallowfullscreen="mozallowfullscreen" 
        msallowfullscreen="msallowfullscreen" 
        oallowfullscreen="oallowfullscreen" 

@@ -13,6 +13,13 @@ iframe{
 }
 
 
+#title{
+    color: inherit;
+}
+
+#description{
+    color: inherit
+}
 
 @media(max-width: 480px){
     #title{

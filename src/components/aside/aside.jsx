@@ -11,6 +11,10 @@ export default function Aside(props){
 
     const value = useContext(linkStore)
 
+    // if(value){
+    //     window.sessionStorage.setItem('play_list', jwt.sign({value}, 'shhhhh'))
+    // }
+
     return (
         <Col md={4} lg={4}>
             <div className="aside shadow-sm mt-3 text-left">

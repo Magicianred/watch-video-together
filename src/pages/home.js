@@ -1,8 +1,7 @@
 import {useState,useEffect} from 'react'
 import {Container,Row} from 'react-bootstrap'
-// import jwt from 'jsonwebtoken'
 
-// Components 
+// Component's 
 import Aside from '../components/aside/aside'
 import VideoSection from '../components/video-section/video-section'
 import Navbar from '../components/navbar/navbar'
@@ -25,10 +24,12 @@ export default function Home(){
             ...linkarr,
             link
         ])
+        console.log(linkarr)
     },[link]);
 
     return (
         <>
+        <title>Room: {window.location.pathname.replace(/\/room\//, "")} </title>
         <linkStore.Provider value={linkarr}>
             <Navbar token={setLink} />
             <Container className="mt-3">

@@ -7,6 +7,7 @@ import {Navbar,
     FormControl,
     Button,
 } from 'react-bootstrap'
+import urlParser from "js-video-url-parser";
 import toast, { Toaster } from 'react-hot-toast';
 
 // Styles
@@ -19,23 +20,25 @@ export default function NavbarLayout(props){
     async function onSubmitSent(){
         
         document.querySelector("#search-bar").value = ""
-        var rawSnippts
         
-        await axios({
-            method: "get",
-            url: `https://www.googleapis.com/youtube/v3/videos?id=` + link.match(/(youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/)[4],
-            params: {
-                part: 'snippet',
-                maxResult: 1,
-                key: "AIzaSyDF4HlRKcTis3vd0DC-g-Absl8u4WmwHH8"
-            }
-        }).then((res) => rawSnippts = res.data)
+        if(urlParser.parse(link)){
+            return await axios({
+                method: "get",
+                url: `https://www.googleapis.com/youtube/v3/videos?id=` + urlParser.parse(link).id,
+                params: {
+                    part: 'snippet',
+                    maxResult: 1,
+                    key: "AIzaSyDF4HlRKcTis3vd0DC-g-Absl8u4WmwHH8"
+                }
+            }).then((res) => props.token({
+                id: res.data.items[0].id,
+                title: res.data.items[0].snippet.title,
+                description: res.data.items[0].snippet.description,
+            }))
+        }
+
+        return toast('❌ Link is invalid')
         
-        props.token({
-            id: rawSnippts.items[0].id,
-            title: rawSnippts.items[0].snippet.title,
-            description: rawSnippts.items[0].snippet.description,
-        })
     }
 
     return (
@@ -45,6 +48,7 @@ export default function NavbarLayout(props){
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
             <Nav.Link active>Home</Nav.Link>
+            <Nav.Link href="mailto: nedima.akar53411@gmail.com">Feedback</Nav.Link>
             <Nav.Link href="/">Exit</Nav.Link>
             </Nav>
         <Form inline>

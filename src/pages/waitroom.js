@@ -5,8 +5,13 @@ import WaitRoom from '../components/waitroom/waitroom'
 
 export default function Waitroom(){
     return (
-        <Container>
-            <WaitRoom/>
-        </Container>
+        <>
+            <title>
+                Watch Video Together
+            </title>
+            <Container>
+                <WaitRoom/>
+            </Container>
+        </>
     )
 }
