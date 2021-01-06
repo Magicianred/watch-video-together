@@ -32,7 +32,7 @@ export default function Home(){
         <title>Room: {window.location.pathname.replace(/\/room\//, "")} </title>
         <linkStore.Provider value={linkarr}>
             <Navbar token={setLink} />
-            <Container className="mt-3">
+            <Container>
                 <Row>
                 <VideoSection videoprops={videoprops} />
                 <Aside videoprops={setVideoProps} />

@@ -42,7 +42,7 @@ export default function NavbarLayout(props){
     }
 
     return (
-        <Navbar className="shadow-lg" expand="lg">
+        <Navbar className="shadow-lg position-fixed w-100" expand="lg">
         <Navbar.Brand >Watch Video Together 👁</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
