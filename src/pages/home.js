@@ -34,8 +34,8 @@ export default function Home(){
             <Navbar token={setLink} />
             <Container className="mt-3">
                 <Row>
-                <Aside videoprops={setVideoProps} />
                 <VideoSection videoprops={videoprops} />
+                <Aside videoprops={setVideoProps} />
                 </Row>
                 <hr className="mt-4"/>
                 <p className="text-center small">
