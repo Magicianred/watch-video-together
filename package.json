@@ -1,5 +1,5 @@
 {
-  "name": "watch-video-togather",
+  "name": "watch-youtube-videos",
   "version": "0.1.0",
   "homepage": "/",
   "private": true,
@@ -21,7 +21,7 @@
     "react-scripts": "4.0.1",
     "react-transition-group": "^4.4.1",
     "react-youtube": "^7.13.0",
-    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

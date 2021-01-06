@@ -1,6 +1,5 @@
 import {useEffect,useState} from 'react'
 import {Button} from 'react-bootstrap'
-import axios from 'axios'
 
 // Components
 import BuyMeCoffe from '../../container/buymecoffe/buymecoffe'
@@ -8,16 +7,14 @@ import BuyMeCoffe from '../../container/buymecoffe/buymecoffe'
 // Styles
 import './style.css'
 
+import openSocket from 'socket.io-client';
+const socket = openSocket('http://localhost:8080');
+
 export default function WaitRoom(){
 
     const [roomkey] = useState(window.location + "room/" + Math.random().toString(36).substring(2))
 
-    useEffect(() => {
-        axios({
-            method:"get",
-            url:"http://localhost:8080/room/getroom"
-        })
-    },[])
+    console.log(socket.emit('create', "window.location.pathname"))
 
     return (
         <div id="waitroom">
