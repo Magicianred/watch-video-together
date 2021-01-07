@@ -7,14 +7,10 @@ import BuyMeCoffe from '../../container/buymecoffe/buymecoffe'
 // Styles
 import './style.css'
 
-import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8080');
-
 export default function WaitRoom(){
 
     const [roomkey] = useState(window.location + "room/" + Math.random().toString(36).substring(2))
 
-    console.log(socket.emit('create', "window.location.pathname"))
 
     return (
         <div id="waitroom">

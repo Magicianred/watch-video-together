@@ -22,7 +22,7 @@ export default function Aside(props){
                     value.map((element,index) => {
                         if(element){
                             return (
-                                <div key={index} className="p-3 border-bottom" id="videocard">
+                                <div key={index} onClick={() => window.scrollTo(0, 0)} className="p-3 border-bottom" id="videocard">
                                     <Container>
                                         <a onClick={() => props.videoprops({
                                             "id": element.id,
