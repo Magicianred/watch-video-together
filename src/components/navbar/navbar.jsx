@@ -30,11 +30,15 @@ export default function NavbarLayout(props){
                     maxResult: 1,
                     key: "AIzaSyDF4HlRKcTis3vd0DC-g-Absl8u4WmwHH8"
                 }
-            }).then((res) => props.token({
-                id: res.data.items[0].id,
-                title: res.data.items[0].snippet.title,
-                description: res.data.items[0].snippet.description,
-            }))
+            }).then((res) => {
+                props.token({
+                    id: res.data.items[0].id,
+                    title: res.data.items[0].snippet.title,
+                    description: res.data.items[0].snippet.description,
+                })
+
+                return toast('✔️ Your video added succesfully')
+            })
         }
 
         return toast('❌ Link is invalid')

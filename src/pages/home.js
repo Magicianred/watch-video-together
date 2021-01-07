@@ -33,7 +33,7 @@ export default function Home(){
         <linkStore.Provider value={linkarr}>
             <Navbar token={setLink} />
             <Container>
-                <Row>
+                <Row style={{paddingTop: "5rem"}}>
                 <VideoSection videoprops={videoprops} />
                 <Aside videoprops={setVideoProps} />
                 </Row>
