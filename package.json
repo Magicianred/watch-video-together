@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "concurrently": "^5.3.0",
     "js-video-url-parser": "^0.4.3",
     "jsonwebtoken": "^8.5.1",
     "querystring": "^0.2.0",
@@ -26,6 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "concurrently \"cd server && npm run start\" \"npm run start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

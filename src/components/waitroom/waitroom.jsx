@@ -11,7 +11,6 @@ export default function WaitRoom(){
 
     const [roomkey] = useState(window.location + "room/" + Math.random().toString(36).substring(2))
 
-
     return (
         <div id="waitroom">
             <BuyMeCoffe/>
