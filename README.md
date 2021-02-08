@@ -1,5 +1,5 @@
 
-![Repo gif](https://media.giphy.com/media/4Y2vmZ4DmAJX0cOZeH/source.gif)<br/>
+![Repo gif](https://raw.githubusercontent.com/jack5341/watch-video-together/main/media/MOSHED-2021-2-8-22-35-24.gif)<br/>
 <p>
 <a href="https://watch-video-together.herokuapp.com/"><img src="https://img.shields.io/badge/-watchvideotogether-8e6fb3?style=flat&logo=Google-Chrome&logoColor=white"/></a>
 <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
